@@ -8,6 +8,7 @@
 
 module Vpim
   class Icalendar
+
     module Property
       module Location
         # Physical location information relevant to the component, or nil if
@@ -32,6 +33,16 @@ module Vpim
 
       end
     end
+
+    # add a location property to (v)events. This is specified in the RFC 2445
+    module Set
+      module Location
+        def location(value)
+          set_text 'LOCATION', value
+        end
+      end
+    end
+
   end
 end
 

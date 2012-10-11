@@ -79,7 +79,7 @@ module Vpim
   def Vpim.unfold(card) #:nodoc:
       unfolded = []
 
-      card.each do |line|
+      card.each_line do |line|
         line.chomp!
         # If it's a continuation line, add it to the last.
         # If it's an empty line, drop it from the input.
